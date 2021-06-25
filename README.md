@@ -1,8 +1,9 @@
 ## Akina
 This telegram bot created as a fun project without plans to take over the world, but she could! 😉
-<br>It 🔧created🔨  with: go-telegram-bot-api lib and GoLand. Deployed 🚀 to Heroku.
+<br>It 🔧created🔨  with: go-telegram-bot-api lib and GoLand. Deployed 🚀 to Heroku.<br><br>
 ####Bot's name:@MsAkina_bot<br>
-<b>Bot works for many tasks and functionality and will be expanded with the coming of new bright ideas 👍</b><br>
+<br>
+<b>B ot works for many tasks and functionality and will be expanded with the coming of new bright ideas 👍</b><br>
 <b>Some implemented things:</b>
 <br>✔️ daily check 🕙 of important events and sending them to specified chats;
 <br>✔️ makes a daily selection of the weather 🌞 for the specified cities and sends it to the specified chats. Data <br>
