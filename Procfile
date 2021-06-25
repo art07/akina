@@ -1,1 +1,1 @@
-web: bin/akina
+worker: bin/akina
