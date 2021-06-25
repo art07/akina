@@ -23,7 +23,7 @@ func CheckEvents(todayTime *time.Time) {
 func sendEventsAsMsgsToChats(eventsToday *[]datalab.Event) {
 	for _, event := range *eventsToday {
 		for _, chatId := range event.Chats {
-			datalab.GetDl().Akina.SendMsg(int64(chatId), event.Description)
+			datalab.GetDl().Akina.SendMsg(chatId, event.Description)
 		}
 	}
 }

@@ -31,7 +31,7 @@ func CheckTheBestVideo(category *datalab.Category) {
 	}
 
 	// 4) Передать боту ссылку на лучшее видео со всех каналов.
-	datalab.GetDl().Akina.SendMsg(datalab.ToMe, fmt.Sprintf("%s%s", datalab.GetDl().Youtube.MainPartOfYbUrl, vdo.ID.VideoID))
+	datalab.GetDl().Akina.SendMsg(datalab.ToOurGroup, fmt.Sprintf("%s%s", datalab.GetDl().Youtube.MainPartOfYbUrl, vdo.ID.VideoID))
 }
 
 func getBestVideo(chanId string) *video {

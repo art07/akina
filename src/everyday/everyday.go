@@ -10,19 +10,19 @@ import (
 )
 
 func StartEveryDayJob(atTime int) {
-	//for ; ; {
-	//	h, m, _ := time.Now().In(datalab.GetDl().Loc).Clock()
-	//	if h == atTime && m == 0 {
-	//		break
-	//	}
-	//}
+	for {
+		h, m, _ := time.Now().In(datalab.GetDl().Loc).Clock()
+		if h == atTime && m == 0 {
+			break
+		}
+	}
 
 	for {
 		// Запуск горутины из ПОТОКА X.
 		go func() {
 			todayTime := time.Now().In(datalab.GetDl().Loc)
 
-			weather.CheckWeather(datalab.GetDl().Cities, datalab.ToMe)
+			weather.CheckWeather(datalab.GetDl().Cities, datalab.ToOurGroup)
 			events.CheckEvents(&todayTime)
 
 			switch todayTime.Weekday() {
@@ -31,7 +31,7 @@ func StartEveryDayJob(atTime int) {
 			case time.Tuesday:
 				// do some job
 			case time.Wednesday:
-				currencies.CheckCurrencies(datalab.ToMe)
+				currencies.CheckCurrencies(datalab.ToOurGroup)
 			case time.Thursday:
 				// do some job
 			case time.Friday:

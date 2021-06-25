@@ -18,7 +18,7 @@ func main() {
 	if err == nil {
 		dl.Akina.Bot = akinaBot
 		log.SetOutput(os.Stdout)
-		dl.Akina.Bot.Debug = true
+		dl.Akina.Bot.Debug = false
 		log.Printf("\n%s started!\n\n\n", dl.Akina.Name)
 		// Запустить ПОТОК X для ежедневной работы.
 		go everyday.StartEveryDayJob(10)
