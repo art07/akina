@@ -1,7 +1,11 @@
 package everyday
 
 import (
+	"art/bots/akina/src/currencies"
 	"art/bots/akina/src/datalab"
+	"art/bots/akina/src/events"
+	"art/bots/akina/src/weather"
+	"art/bots/akina/src/youtube"
 	"time"
 )
 
@@ -18,12 +22,8 @@ func StartEveryDayJob(atTime int) {
 		go func() {
 			todayTime := time.Now().In(datalab.GetDl().Loc)
 
-			//events.CheckEvents(&todayTime)
-			//weather.CheckWeather(datalab.GetDl().Cities, datalab.ToMe)
-			//currencies.CheckCurrencies(datalab.ToMe)
-			//youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[0])
-			//youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[1])
-			//youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[2])
+			weather.CheckWeather(datalab.GetDl().Cities, datalab.ToMe)
+			events.CheckEvents(&todayTime)
 
 			switch todayTime.Weekday() {
 			case time.Monday:
@@ -31,15 +31,15 @@ func StartEveryDayJob(atTime int) {
 			case time.Tuesday:
 				// do some job
 			case time.Wednesday:
-				// do some job
+				currencies.CheckCurrencies(datalab.ToMe)
 			case time.Thursday:
 				// do some job
 			case time.Friday:
-				// do some job
+				youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[0])
 			case time.Saturday:
-				// do some job
+				youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[1])
 			case time.Sunday:
-				// do some job
+				youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[2])
 			}
 		}()
 
