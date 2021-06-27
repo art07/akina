@@ -9,10 +9,10 @@ import (
 	"time"
 )
 
-func StartEveryDayJob(atTime int) {
+func StartEveryDayJob(atH, atM int) {
 	for {
 		h, m, _ := time.Now().In(datalab.GetDl().Loc).Clock()
-		if h == atTime && m == 0 {
+		if h == atH && m == atM {
 			break
 		}
 	}
@@ -35,11 +35,11 @@ func StartEveryDayJob(atTime int) {
 			case time.Thursday:
 				// do some job
 			case time.Friday:
-				youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[0])
+				youtube.CheckTheBestVideo(&datalab.GetDl().Youtube.Categories[0])
 			case time.Saturday:
-				youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[1])
+				youtube.CheckTheBestVideo(&datalab.GetDl().Youtube.Categories[1])
 			case time.Sunday:
-				youtube.CheckTheBestVideo(&(*datalab.GetDl().Youtube.Categories)[2])
+				youtube.CheckTheBestVideo(&datalab.GetDl().Youtube.Categories[2])
 			}
 		}()
 

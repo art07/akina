@@ -2,6 +2,7 @@ package youtube
 
 import (
 	"art/bots/akina/src/datalab"
+	"art/bots/akina/src/db"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -23,15 +24,16 @@ func CheckTheBestVideo(category *datalab.Category) {
 	// 2) Нахожу лучшее видео для всех каналов этой категории.
 	vdo := getMostViewedVideo(&bestVideosFromAllCategoryChannels)
 
-	// 3) Если это видео уже было самым популярным, ничего не делать.
-	if vdo.ID.VideoID == category.LastWatchedVideo {
-		return
-	} else {
+	// 3) Если это видео еще не было самым популярным, сохранить в dl и в db.
+	if vdo.ID.VideoID != category.LastWatchedVideo {
 		category.LastWatchedVideo = vdo.ID.VideoID
+		datalab.GetDl().Akina.SendMsg(datalab.ToOurGroup, fmt.Sprintf("%s%s", datalab.GetDl().Youtube.MainPartOfYbUrl, category.LastWatchedVideo))
+		err := db.UpdateDbRecord(category)
+		if err != nil {
+			log.Println(err)
+		}
 	}
 
-	// 4) Передать боту ссылку на лучшее видео со всех каналов.
-	datalab.GetDl().Akina.SendMsg(datalab.ToOurGroup, fmt.Sprintf("%s%s", datalab.GetDl().Youtube.MainPartOfYbUrl, vdo.ID.VideoID))
 }
 
 func getBestVideo(chanId string) *video {

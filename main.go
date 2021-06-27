@@ -3,6 +3,7 @@ package main
 import (
 	"art/bots/akina/src/commands"
 	"art/bots/akina/src/datalab"
+	"art/bots/akina/src/db"
 	"art/bots/akina/src/everyday"
 	"art/bots/akina/src/msgs"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
@@ -11,17 +12,18 @@ import (
 )
 
 func main() {
+	log.SetOutput(os.Stdout)
 	dl := datalab.GetDl()
 
 	// Создание объекта бота.
 	akinaBot, err := tgbotapi.NewBotAPI(dl.Akina.Token)
 	if err == nil {
+		db.InitDbJob(0)
 		dl.Akina.Bot = akinaBot
-		log.SetOutput(os.Stdout)
 		dl.Akina.Bot.Debug = false
 		log.Printf("\n%s started!\n\n\n", dl.Akina.Name)
 		// Запустить ПОТОК X для ежедневной работы.
-		go everyday.StartEveryDayJob(10)
+		go everyday.StartEveryDayJob(10, 0)
 	} else {
 		log.Panic(err)
 	}

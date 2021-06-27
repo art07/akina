@@ -50,7 +50,7 @@ type youtube struct {
 	MainPartOfHttpUrl  string
 	MainPartOfHttpUrl2 string
 	MainPartOfYbUrl    string
-	Categories         *[]Category
+	Categories         []Category
 }
 
 type owm struct {

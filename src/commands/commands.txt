@@ -1,5 +1,0 @@
-hi - Greeting
-w - Check weather
-c - Currencies
-about - Akina info
-chatinfo - Chat info
