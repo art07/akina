@@ -1,6 +1,6 @@
 ## Akina
 This telegram bot created as a fun project without plans to take over the world, but she could! 😉
-<br>It 🔧created🔨  with: go-telegram-bot-api lib and GoLand. Deployed 🚀 to Heroku.<br><br>
+<br>It 🔧created🔨  with: go-telegram-bot-api lib, GoLand and SQLite. Deployed 🚀 to Heroku.<br><br>
 <b>Bot's name:@MsAkina_bot</b>
 <br><br>
 <b>Bot works for many tasks and functionality and will be expanded with the coming of new bright ideas 👍</b><br>
@@ -15,7 +15,7 @@ temp and sends it to the specified chats. Data from OpenWeatherMap;
 with categories according to principle One day of week - One different category. Every day, bot takes one category,<br>
 goes through all channels of this category and takes 5 last videos from each channel. And from these videos it finds<br>
 the most viewed video. If the video new, bot sends link on this video to specified chats, if video was shown<br>
-earlier, does nothing;
+earlier (checking sqlite db), does nothing;
 <br>✔️ ...
 
 
