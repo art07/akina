@@ -13,7 +13,7 @@ https://api.openweathermap.org/data/2.5/weather?q=mariupol&units=metric&appid=2a
 package weather
 
 import (
-	"art/bots/akina/src/datalab"
+	"art/bots/akina/internal/datalab"
 	"encoding/json"
 	"errors"
 	"fmt"

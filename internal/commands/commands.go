@@ -1,10 +1,10 @@
 package commands
 
 import (
-	"art/bots/akina/src/currencies"
-	"art/bots/akina/src/datalab"
-	"art/bots/akina/src/db"
-	"art/bots/akina/src/weather"
+	"art/bots/akina/internal/currencies"
+	"art/bots/akina/internal/datalab"
+	"art/bots/akina/internal/db"
+	"art/bots/akina/internal/weather"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"log"
 )

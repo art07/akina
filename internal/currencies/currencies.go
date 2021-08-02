@@ -1,7 +1,7 @@
 package currencies
 
 import (
-	"art/bots/akina/src/datalab"
+	"art/bots/akina/internal/datalab"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"art/bots/akina/src/commands"
-	"art/bots/akina/src/datalab"
-	"art/bots/akina/src/db"
-	"art/bots/akina/src/everyday"
-	"art/bots/akina/src/msgs"
+	"art/bots/akina/internal/commands"
+	"art/bots/akina/internal/datalab"
+	"art/bots/akina/internal/db"
+	"art/bots/akina/internal/everyday"
+	"art/bots/akina/internal/msgs"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"log"
 	"os"

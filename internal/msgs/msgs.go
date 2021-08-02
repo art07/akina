@@ -1,8 +1,9 @@
 package msgs
 
 import (
-	"art/bots/akina/src/datalab"
-	"art/bots/akina/src/youtube"
+	"art/bots/akina/internal/datalab"
+	"art/bots/akina/internal/youtube"
+	"fmt"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"strings"
 )
@@ -16,6 +17,6 @@ func ChooseAction(u tgbotapi.Update) {
 		youtube.CheckTheBestVideo(&datalab.GetDl().Youtube.Categories[1])
 		youtube.CheckTheBestVideo(&datalab.GetDl().Youtube.Categories[2])
 	default:
-		datalab.GetDl().Akina.SendMsgAsAnswer(u.Message.Chat.ID, u.Message.MessageID, u.Message.Text)
+		datalab.GetDl().Akina.SendMsgAsAnswer(u.Message.Chat.ID, u.Message.MessageID, fmt.Sprintf("Hi, %s!", u.Message.From.FirstName))
 	}
 }

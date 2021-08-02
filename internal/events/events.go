@@ -1,7 +1,7 @@
 package events
 
 import (
-	"art/bots/akina/src/datalab"
+	"art/bots/akina/internal/datalab"
 	"time"
 )
 

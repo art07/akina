@@ -1,11 +1,11 @@
 package everyday
 
 import (
-	"art/bots/akina/src/currencies"
-	"art/bots/akina/src/datalab"
-	"art/bots/akina/src/events"
-	"art/bots/akina/src/weather"
-	"art/bots/akina/src/youtube"
+	"art/bots/akina/internal/currencies"
+	"art/bots/akina/internal/datalab"
+	"art/bots/akina/internal/events"
+	"art/bots/akina/internal/weather"
+	"art/bots/akina/internal/youtube"
 	"time"
 )
 

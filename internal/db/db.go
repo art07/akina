@@ -1,7 +1,7 @@
 package db
 
 import (
-	"art/bots/akina/src/datalab"
+	"art/bots/akina/internal/datalab"
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
 	"log"

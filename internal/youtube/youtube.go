@@ -1,8 +1,8 @@
 package youtube
 
 import (
-	"art/bots/akina/src/datalab"
-	"art/bots/akina/src/db"
+	"art/bots/akina/internal/datalab"
+	"art/bots/akina/internal/db"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
