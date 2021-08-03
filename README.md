@@ -1,6 +1,7 @@
 ## Akina
-This telegram bot created as a fun project without plans to take over the world, but she could! 😉
-<br>It 🔧created🔨  with: go-telegram-bot-api lib, GoLand and SQLite. Deployed 🚀 to Heroku.<br><br>
+This telegram bot created as a fun Golang project without plans to take over the world, but she could! 😉
+<br>It 🔧created🔨  with: go-telegram-bot-api lib, GoLand and SQLite.
+<br>Created docker image (FROM ubuntu:latest) with the app and deployed 🚀 to Heroku Docker container.<br><br>
 <b>Bot's name: @MsAkina_bot</b>
 <br><br>
 <b>Bot works for many tasks and functionality and will be expanded with the coming of new bright ideas 👍</b><br>
