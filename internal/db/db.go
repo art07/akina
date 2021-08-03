@@ -11,7 +11,7 @@ import (
 
 //goland:noinspection GoUnhandledErrorResult
 func InitDbJob(mode int) {
-	akinaDb, err := sql.Open("sqlite3", "akina.db")
+	akinaDb, err := sql.Open("sqlite3", "./akina.db")
 	if err != nil {
 		log.Fatal(err)
 	}
